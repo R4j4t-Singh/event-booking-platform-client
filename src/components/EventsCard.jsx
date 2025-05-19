@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import apiService from "../backend/api";
-import { Card, SeacrhBox } from "./";
+import { Card, SearchBox } from "./";
 
 function EventsCard() {
   const [events, setEvents] = useState([]);
@@ -21,7 +21,7 @@ function EventsCard() {
         Book your seats NOW!!
       </h1>
       <div className="flex justify-center">
-        <SeacrhBox />
+        <SearchBox />
       </div>
       <div className="w-full p-4 mt-5 grid grid-cols-3">
         {events.map((event) => (

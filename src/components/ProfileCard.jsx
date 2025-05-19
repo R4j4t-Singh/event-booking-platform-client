@@ -3,6 +3,7 @@ import authService from "../backend/auth";
 import bookingService from "../backend/booking";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { dateFormat } from "../util/DateFormat";
 
 function ProfileCard() {
   const [bookings, setBookings] = useState({});
@@ -77,7 +78,7 @@ function ProfileCard() {
                   </span>
                   <span className="flex justify-between px-4 py-2">
                     <p>Booked On: </p>
-                    <p>{booking.bookingTime}</p>
+                    <p>{dateFormat(booking.bookingTime)}</p>
                   </span>
                   <span className="flex justify-between px-4 py-2">
                     <p>Event: </p>
@@ -90,7 +91,8 @@ function ProfileCard() {
                   <span className="flex justify-between px-4 py-2">
                     <p>Timing: </p>
                     <p>
-                      {booking.startTime} - {booking.endTime}
+                      {dateFormat(booking.startTime)} -{" "}
+                      {dateFormat(booking.endTime)}
                     </p>
                   </span>
                   <span className="flex justify-between px-4 py-2">
@@ -103,7 +105,7 @@ function ProfileCard() {
                       ))}
                     </div>
                   </span>
-                   <span className="flex justify-between px-4 py-2">
+                  <span className="flex justify-between px-4 py-2">
                     <p>Status: </p>
                     <p>{booking.status}</p>
                   </span>

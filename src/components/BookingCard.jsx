@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import bookingService from "../backend/booking";
+import { dateFormat } from "../util/DateFormat";
 
 function BookingCard() {
   const show = useSelector((state) => state.showReducer.show);
@@ -25,7 +26,7 @@ function BookingCard() {
 
   return (
     <div className="flex p-6 justify-center items-center w-full min-h-screen bg-gray-400">
-      <div className="max-w-sm p-8 w-full border-1 mb-4 rounded-xl space-y-4 bg-gray-200">
+      <div className="max-w-md p-8 w-full border-1 mb-4 rounded-xl space-y-4 bg-gray-200">
         <div className="text-center font-medium">
           {error && <h2 className="text-red-500">{error}</h2>}
           {bookingId && (
@@ -41,10 +42,10 @@ function BookingCard() {
             Venue : <p>{show.venue}</p>
           </span>
           <span className="flex justify-between">
-            Start Time : <p>{show.startTime}</p>
+            Start Time : <p>{dateFormat(show.startTime)}</p>
           </span>
           <span className="flex justify-between">
-            End Time : <p>{show.endTime}</p>
+            End Time : <p>{dateFormat(show.endTime)}</p>
           </span>
           <div className="flex justify-between">
             <p>Seats : </p>

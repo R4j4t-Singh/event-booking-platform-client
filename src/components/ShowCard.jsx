@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setShow } from "../store/showSlice";
+import { dateFormat } from "../util/DateFormat";
 
 function ShowCard({ id, venue, startTime, endTime }) {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function ShowCard({ id, venue, startTime, endTime }) {
     >
       <h3 className="font-bold">{venue}</h3>
       <p>
-        {startTime} - {endTime}
+        {dateFormat(startTime)} - {dateFormat(endTime)}
       </p>
     </button>
   );

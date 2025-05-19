@@ -8,7 +8,7 @@ import SeatCard from "./SeatCard";
 import LoginForm from "./LoginForm";
 import Input from "./Input";
 import SignupForm from "./SignupForm";
-import SeacrhBox from "./SeacrhBox";
+import SearchBox from "./SearchBox";
 import BookingCard from "./BookingCard";
 import ProfileCard from "./ProfileCard";
 import EventsList from "./EventsList";
@@ -26,7 +26,7 @@ export {
   LoginForm,
   Input,
   SignupForm,
-  SeacrhBox,
+  SearchBox,
   BookingCard,
   ProfileCard,
   EventsList,
